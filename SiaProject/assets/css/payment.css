@@ -1,0 +1,248 @@
+ :root {
+     --primary: #4361ee;
+     --primary-light: #e6e9ff;
+     --secondary: #3f37c9;
+     --success: #4cc9f0;
+     --dark: #212529;
+     --light: #f8f9fa;
+     --border-radius: 12px;
+     --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+ }
+
+ body {
+     font-family: 'Inter', sans-serif;
+     background-color: #f5f7ff;
+     color: var(--dark);
+     line-height: 1.6;
+ }
+
+ .payment-container {
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ .card {
+     border: none;
+     border-radius: var(--border-radius);
+     box-shadow: var(--shadow);
+     overflow: hidden;
+     transition: var(--transition);
+     background: white;
+ }
+
+ .card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+ }
+
+ .card-header {
+     background: linear-gradient(135deg, var(--primary), var(--secondary));
+     color: white;
+     padding: 1.5rem;
+     border-bottom: none;
+ }
+
+ .card-header h3 {
+     font-weight: 600;
+     margin: 0;
+ }
+
+ .badge-light {
+     background-color: var(--primary-light);
+     color: var(--primary);
+ }
+
+ .price-tag {
+     font-size: 2rem;
+     font-weight: 700;
+     color: var(--primary);
+ }
+
+ .divider {
+     height: 1px;
+     background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+     margin: 1.5rem 0;
+ }
+
+ .payment-method {
+     display: flex;
+     align-items: center;
+     padding: 1.25rem;
+     border: 2px solid #e9ecef;
+     border-radius: var(--border-radius);
+     margin-bottom: 1rem;
+     cursor: pointer;
+     transition: var(--transition);
+ }
+
+ .payment-method:hover {
+     border-color: var(--primary);
+     background-color: rgba(67, 97, 238, 0.03);
+ }
+
+ .payment-method.active {
+     border-color: var(--primary);
+     background-color: rgba(67, 97, 238, 0.05);
+     box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+ }
+
+ .payment-icon {
+     width: 48px;
+     height: 48px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: var(--primary-light);
+     color: var(--primary);
+     border-radius: 50%;
+     margin-right: 1rem;
+     font-size: 1.5rem;
+ }
+
+ .payment-method.active .payment-icon {
+     background-color: var(--primary);
+     color: white;
+ }
+
+ .payment-details {
+     display: none;
+     background-color: var(--light);
+     border-radius: var(--border-radius);
+     padding: 1.25rem;
+     margin-bottom: 1.5rem;
+ }
+
+ .btn-pay {
+     background: linear-gradient(135deg, var(--primary), var(--secondary));
+     border: none;
+     padding: 1rem;
+     font-weight: 600;
+     letter-spacing: 0.5px;
+     border-radius: var(--border-radius);
+     width: 100%;
+     transition: var(--transition);
+ }
+
+ .btn-pay:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 5px 20px rgba(67, 97, 238, 0.3);
+ }
+
+ .security-badge {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     color: #6c757d;
+     font-size: 0.8rem;
+ }
+
+ .security-badge i {
+     font-size: 1.25rem;
+     margin-bottom: 0.5rem;
+     color: var(--primary);
+ }
+
+ .progress-steps {
+     display: flex;
+     justify-content: space-between;
+     position: relative;
+     margin-bottom: 3rem;
+     counter-reset: step;
+ }
+
+ .progress-steps::before {
+     content: '';
+     position: absolute;
+     top: 15px;
+     left: 0;
+     right: 0;
+     height: 2px;
+     background-color: #e9ecef;
+     z-index: 1;
+ }
+
+ .progress-step {
+     position: relative;
+     text-align: center;
+     z-index: 2;
+ }
+
+ .progress-step::before {
+     counter-increment: step;
+     content: counter(step);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 30px;
+     height: 30px;
+     margin: 0 auto 0.5rem;
+     background-color: white;
+     border: 2px solid #e9ecef;
+     border-radius: 50%;
+     font-weight: 600;
+     color: #adb5bd;
+ }
+
+ .progress-step.active::before {
+     background-color: var(--primary);
+     border-color: var(--primary);
+     color: white;
+ }
+
+ .progress-step.completed::before {
+     background-color: var(--success);
+     border-color: var(--success);
+     color: white;
+     content: '✓';
+ }
+
+ .progress-step-label {
+     font-size: 0.875rem;
+     font-weight: 500;
+     color: #adb5bd;
+ }
+
+ .progress-step.active .progress-step-label,
+ .progress-step.completed .progress-step-label {
+     color: var(--dark);
+ }
+
+ .flight-route {
+     position: relative;
+     padding-left: 2rem;
+ }
+
+ .flight-route::before {
+     content: '';
+     position: absolute;
+     left: 0;
+     top: 10px;
+     bottom: 10px;
+     width: 2px;
+     background: linear-gradient(to bottom, var(--primary), var(--success));
+ }
+
+ .flight-dot {
+     position: absolute;
+     left: -5px;
+     width: 12px;
+     height: 12px;
+     border-radius: 50%;
+     background-color: var(--primary);
+ }
+
+ .flight-dot.arrival {
+     background-color: var(--success);
+ }
+
+ @media (max-width: 768px) {
+     .progress-steps {
+         flex-wrap: wrap;
+     }
+
+     .progress-step {
+         flex: 0 0 50%;
+         margin-bottom: 1rem;
+     }
+ }

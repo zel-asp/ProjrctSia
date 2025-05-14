@@ -1,0 +1,213 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: url("../images/background.webp") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.ticket {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #715BF4, #4D37B7);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    color: white;
+    position: relative;
+}
+
+.ticket-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.ticket-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.ticket-header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.ticket-body {
+    padding: 20px;
+}
+
+.flight-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.airport {
+    text-align: center;
+}
+
+.airport-code {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.airport-name {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.flight-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.flight-details:before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 50%;
+    left: -30px;
+}
+
+.flight-details:after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 50%;
+    right: -30px;
+}
+
+.flight-number {
+    font-size: 14px;
+    margin-bottom: 5px;
+
+}
+
+.flight-time {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    left: -15px;
+    top: -7px;
+}
+
+.divider:after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    right: -15px;
+    top: -7px;
+}
+
+.passenger-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.info-group {
+    flex: 1;
+}
+
+.info-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 3px;
+}
+
+.info-value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.barcode {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+.barcode img {
+    width: 70%;
+    height: 80px;
+    object-fit: contain;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.terms {
+    font-size: 10px;
+    text-align: center;
+    padding: 10px 20px;
+    opacity: 0.6;
+}
+
+.ticket-footer {
+    background-color: white;
+    padding: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.ticket-footer p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.logo {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.print-btn {
+    background-color: white;
+    color: #715BF4;
+    width: 80%;
+    box-shadow: 2px 2px 5px gray;
+    border: 1px solid #715BF4;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.print-btn:hover {
+    background-color: #715BF4;
+    color: white;
+    cursor: pointer;
+}
